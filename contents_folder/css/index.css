@@ -1,0 +1,1146 @@
+/*
+公共属性设置
+*/
+/*z-index*/
+/*color*/
+/*flex*/
+.flex_display {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/*
+整体
+*/
+html,
+body {
+    height: 100%;
+    font-family: "Microsoft YaHei";
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+}
+
+/*手机端1rem=8px*/
+html {
+    font-size: 50%;
+}
+
+/*pc端1rem=10px*/
+@media (min-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/*
+模块
+*/
+.panel {
+    border: 0;
+    position: relative;
+}
+
+/*宽度小于992px或者高度小于600时高度自适应，否则高度100%（js中设置的）*/
+@media (max-width: 992px), (max-height: 600px) {
+    .panel {
+        font-size: 1.8rem;
+        height: auto !important;
+        margin-bottom: 0;
+    }
+}
+
+/*
+菱形图
+*/
+.set_bj_bottom {
+    position: absolute;
+    bottom: -120px;
+    left: 10%;
+    width: 80%;
+    z-index: 98;
+    height: 180px;
+    display: none;
+}
+
+/*高度在600px到800px之间缩小菱形的高度*/
+@media (min-height: 600px) and (max-height: 800px) {
+    .set_bj_bottom {
+        bottom: -100px;
+        height: 140px;
+    }
+}
+
+/*
+导航栏
+*/
+nav {
+    z-index: 99;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    background-color: #24242E;
+    position: fixed;
+    top: 0;
+    font-size: 1.6rem;
+}
+
+nav .container {
+    height: 60px;
+    line-height: 60px;
+    color: #fff;
+}
+
+nav .container .nav-home {
+    float: left;
+}
+
+nav .container .nav-download {
+    float: right;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    -o-align-items: flex-end;
+    align-items: flex-end;
+    cursor: pointer;
+}
+
+.saas:hover {
+    color: #fff;
+    text-decoration: none
+}
+
+nav .container .nav-download .qrcode-box {
+    display: none;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-align-items: flex-end;
+    -moz-align-items: flex-end;
+    -ms-align-items: flex-end;
+    -o-align-items: flex-end;
+    align-items: flex-end;
+}
+
+nav .container .nav-download .qrcode-box .qrcode-box-content {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    width: 260px;
+    height: 160px;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+    background-color: rgba(11, 12, 30, 0.3);
+}
+
+nav .container .nav-download .qrcode-box .qrcode-box-content .qrcode-item .qrcode-title {
+    height: 30px;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+}
+
+nav .container .nav-download .qrcode-box .qrcode-box-content .qrcode-item .deco-qrcode {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    /*background-image: url('../img/homePage/deco-qrcode.png');*/
+}
+
+nav .container .nav-download .qrcode-box .qrcode-box-content .qrcode-item .deco-qrcode img {
+    width: 108px;
+    height: 108px;
+}
+
+nav .container .nav-download .icon-triangle-down {
+    width: 0;
+    height: 0;
+    margin-right: 28px;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-top: 8px solid #24242e;
+}
+
+nav .container .nav-download img {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    width: 120px;
+    height: 135px;
+}
+
+nav .container .nav-download:hover .qrcode-box {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+/*
+轮播
+*/
+/*宽度768以下*/
+.home .container .header_icon {
+    width: 50px;
+    position: absolute;
+    z-index: 100;
+}
+
+.home .introduction_mask {
+    background-color: rgba(148, 165, 255, 0.5);
+    width: 100%;
+    height: 300px;
+    z-index: 98;
+    position: absolute;
+    text-align: center;
+    overflow: hidden;
+}
+
+/*.home .introduction_mask .banner_bj {*/
+    /*position: absolute;*/
+    /*left: 0;*/
+    /*right: 0;*/
+/*}*/
+
+/*.home .introduction_mask .banner_title {*/
+    /*height: 88px;*/
+    /*margin: 64px auto 0 auto;*/
+/*}*/
+
+.saas_root {
+    margin-top: 1vh;
+}
+
+.saas {
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.8rem;
+    width: 180px;
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+    border-radius: 15px;
+    font-weight: 300;
+}
+
+.home .introduction_mask .download_button_box {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    margin: 10px auto 0 auto;
+}
+
+.home .introduction_mask .download_button {
+    width: 180px;
+    height: 30px;
+    margin: 5px 2vw;
+    border-radius: 40px;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 100;
+    top: 50%;
+    cursor: pointer;
+}
+
+.home .introduction_mask .download_button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.home .introduction_mask .download_button_trucker {
+    background-color: #EE314B;
+}
+
+.home .introduction_mask .download_button_owner {
+    background-color: #0092f6;
+}
+
+.home .introduction_mask .banner_bj_1 {
+    top: 0;
+    width: 100%;
+}
+
+.home .introduction_mask .banner_bj_2 {
+    bottom: 0;
+    width: 100%;
+    left: -10%;
+}
+
+.home .introduction_mask .banner_bj_3 {
+    bottom: 0;
+    width: 84%;
+    left: 27%;
+}
+
+.home .introduction {
+    height: 300px;
+    width: 100%;
+}
+
+.home .introduction div {
+    height: 100%;
+    width: 100%;
+}
+
+.home .introduction .introduction_bg {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    /*background-image: url('../img/banner_bj_1.jpg');*/
+}
+.home .introduction .introduction_bg img{
+    width: 100%;
+    height: 100%;
+}
+.home .introduction .swiper-pagination {
+    height: 30px !important;
+}
+
+/*宽度768以上*/
+@media (min-width: 768px) {
+    .home .container .home_title {
+        position: absolute;
+        top:60%;
+        left: 5%;
+        width: 90%;
+        z-index: 200;
+        background-color: rgba(15,15,15,0.3);
+        border-radius: 50%;
+        color: #fff;
+        text-align: center;
+        margin: 0 auto;
+
+    }
+    .home .container .home_title h1 {
+        font-family: MicrosoftYaHeiLight;
+        font-size: 4vw;
+        letter-spacing: 1.4vw;
+    }
+    .home .container .home_title p {
+        width: 80%;
+        margin: 1.248vw auto;
+        font-size: 2.4vw;
+        letter-spacing: 0.8vw;
+    }
+
+    .home .introduction_mask {
+        height: 100%;
+        min-height: 600px;
+    }
+
+    .home .introduction_mask .banner_title {
+        height: 220px;
+        margin: 110px auto 0 auto;
+    }
+
+    .home .introduction_mask .download_button_box {
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
+        flex-direction: row;
+        margin: 120px auto 0 auto;
+    }
+
+    .home .introduction_mask .download_button {
+        width: 240px;
+        height: 50px;
+        border-radius: 25px;
+        line-height: 50px;
+    }
+
+    .home .introduction,
+    .home .introduction div:not(.swiper-pagination) {
+        height: 100%;
+        min-height: 600px;
+    }
+
+    .home .introduction .introduction_bg {
+        /*background-image: url('../img/homePage/banner_pic_992.png');*/
+    }
+
+    .saas_root {
+        margin-top: 5vh;
+    }
+
+    .saas {
+        color: #fff;
+        cursor: pointer;
+        font-size: 1.8rem;
+        border: 1px solid #fff;
+        width: 240px;
+        height: 50px;
+        line-height: 50px;
+        display: inline-block;
+        border-radius: 25px;
+        font-weight: 300;
+    }
+}
+
+/*宽度992以上*/
+@media (min-width: 992px) {
+    .home .introduction_mask .banner_title {
+        height: 28vh;
+        margin: 29vh auto 0 auto;
+    }
+
+    .home .introduction_mask .download_button_box {
+        margin: 17vh auto 0 auto;
+    }
+
+    .home .introduction .introduction_bg {
+        /*background-image: url('../img/homePage/banner_pic_1200.png');*/
+    }
+}
+
+/*高度小于600 且宽度大于992*/
+@media (max-height: 600px) and (min-width: 992px) {
+    .home .introduction_mask .banner_title {
+        height: 220px;
+        margin: 110px auto 0 auto;
+    }
+
+    .home .introduction_mask .download_button_box {
+        margin: 120px auto 0 auto;
+    }
+}
+
+/*
+司机货主角色介绍部分
+*/
+/*宽度414px以下 超小尺寸手机*/
+.driver_part{
+    background-color: rgba(0,146,246,0.2);
+    background-image: url("../img/shebao_bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.manager_part{
+    background-color: rgba(238,49,75,0.2);
+    background-image: url("../img/shebao_bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.role_part {
+    padding-top: 20px;
+    font-size: 2.6rem;
+}
+
+.role_part > .col-md-4 {
+    text-align: center;
+}
+
+.role_part > .col-md-4 .phone_size {
+    width: 300px;
+}
+
+.role_part > .col-md-4 .phone_introduction {
+    position: absolute;
+    z-index: 98;
+    top: 32px;
+    left: calc(50% - 79px);
+}
+
+.role_part > .col-md-4 .phone_introduction div {
+    height: 268px;
+    width: 159px;
+}
+
+.role_part > .col-md-4 .phone_introduction .swiper-container .swiper-wrapper .swiper-slide .phone_introduction_bg {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    background-color: #2b71ff;
+}
+.manager_part .role_part > .col-md-4 .phone_introduction .swiper-container .swiper-wrapper .swiper-slide .phone_introduction_bg{
+    background-color: #EE314B;
+}
+
+.role_part > .col-md-4 .phone_introduction .swiper-container .swiper-pagination {
+    height: 30px !important;
+}
+
+.role_part > .col-md-8 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.role_part > .col-md-8 .content {
+    margin: 20px auto;
+    text-align: left;
+}
+
+.role_part > .col-md-8 .content .sub_title {
+    clear: both;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.role_part > .col-md-8 .content p {
+    clear: both;
+    color: #8C8C8C;
+    font-size: 2rem;
+}
+
+.role_part > .col-md-8 .role_part_pic {
+    width: 40%;
+    text-align: center;
+}
+
+.role_part > .col-md-8 .role_part_pic img {
+    width: 100%;
+    max-width: 112px;
+}
+
+.role_part > .col-md-8 .role_part_content {
+    width: 60%;
+}
+
+/*宽度414px-992px 小尺寸手机*/
+@media (min-width: 414px) {
+    .role_part > .col-md-4 .phone_size {
+        width: 250px;
+    }
+
+    .role_part > .col-md-4 .phone_introduction {
+        top: 40px;
+        left: calc(50% - 99px);
+    }
+
+    .role_part > .col-md-4 .phone_introduction div {
+        height: 334px;
+        width: 199px;
+    }
+}
+
+/*宽度992px-1200px 中尺寸手机*/
+@media (min-width: 992px) {
+    .role_part {
+        display: -webkit-box;
+        /* OLD - iOS 6-, Safari 3.1-6 */
+        display: -moz-box;
+        /* OLD - Firefox 19- (buggy but mostly works) */
+        display: -ms-flexbox;
+        /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        /* NEW - Chrome */
+        display: flex;
+        /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        -o-align-items: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .role_part > .col-md-4 .phone_size {
+        width: 300px;
+    }
+
+    .role_part > .col-md-4 .phone_introduction {
+        top: 47px;
+        left: calc(50% - 111px);
+    }
+
+    .role_part > .col-md-4 .phone_introduction div {
+        height: 401px;
+        width: 240px;
+    }
+
+    .role_part > .col-md-8 .content {
+        margin: 60px auto;
+    }
+
+    .role_part > .col-md-8 .role_part_pic img {
+        max-width: 240px;
+        height: 250px;
+    }
+}
+
+/*宽度1200px以上 大尺寸手机*/
+@media (min-width: 1200px) {
+    .role_part {
+        height: 100%;
+    }
+
+    .role_part > .col-md-4 .phone_size {
+        width: 360px;
+    }
+
+    .role_part > .col-md-4 .phone_introduction {
+        top: 155px;
+        left: calc(50% - 139px);
+    }
+
+    .role_part > .col-md-4 .phone_introduction div {
+        height: 485px;
+        width: 300px;
+    }
+
+
+    .role_part > .col-md-8 .content {
+        margin: 100px auto;
+    }
+}
+
+/*高度在600px-800px 小尺寸手机*/
+@media (min-height: 600px) and (max-height: 800px) {
+    .role_part > .col-md-4 .phone_size {
+        width: 250px;
+    }
+
+    .role_part > .col-md-4 .phone_introduction {
+        top: 68px;
+        left: calc(50% - 108px);
+    }
+
+    .role_part > .col-md-4 .phone_introduction div {
+        height: 378px;
+        width: 216px;
+    }
+
+    .role_part > .col-md-8 .content {
+        margin: 60px auto;
+    }
+}
+
+/*
+我们致力于
+*/
+/*宽度1200px以下*/
+.our_goal {
+    text-align: center;
+    font-size: 2.8rem;
+    overflow: hidden;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.our_goal .content {
+    width: 100%;
+}
+
+.our_goal .content .our_goal_title {
+    margin: 40px auto;
+}
+
+.our_goal .content .our_goal_title .line {
+    width: calc(50% - 200px);
+    height: 1px;
+    background-color: #BBBBBB;
+    margin: 10px 0;
+    display: inline-block;
+}
+
+.our_goal .content .our_goal_content {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
+    -o-justify-content: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro {
+    width: 220px;
+    height: 400px;
+    position: relative;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .bot_pic,
+.our_goal .content .our_goal_content .our_goal_intro .our_goal_mask {
+    width: 220px;
+    height: 230px;
+    background-color: rgba(58, 58, 58, 0.88);
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .our_goal_mask {
+    position: absolute;
+    top: 0;
+    background-color: rgba(58, 58, 58, 0.88);
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .icon {
+    position: absolute;
+    top: 66px;
+    left: 85px;
+    width: 50px;
+    height: 44px;
+    z-index: 2;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .tixing {
+    width: 220px;
+    height: 230px;
+    position: absolute;
+    left: 14px;
+    top: 113px;
+    background-image: url('../img/tixing1.png');
+    background-size: 100% 100%;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .content {
+    position: absolute;
+    top: 177px;
+    width: 174px;
+    text-align: left;
+    left: 40px;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .content h3 {
+    margin: 16px 0;
+    font-weight: 600;
+    color: #333333;
+    font-size: 1.9rem;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro .content p {
+    font-size: 1.4rem;
+    color: #909090;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro:hover .bot_pic,
+.our_goal .content .our_goal_content .our_goal_intro:hover .our_goal_mask {
+    background-color: rgba(47, 28, 31, 0.89);
+}
+
+.our_goal .content .our_goal_content .our_goal_intro:hover .tixing {
+    background-image: url('../img/tixing2.png');
+}
+
+.our_goal .content .our_goal_content .our_goal_intro:hover .content h3 {
+    color: #fff;
+}
+
+.our_goal .content .our_goal_content .our_goal_intro:hover .content p {
+    color: #fff;
+}
+
+/*宽度1200px以上*/
+@media (min-width: 1200px) {
+    .our_goal .content .our_goal_content .our_goal_intro {
+        width: 300px;
+        height: 500px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .bot_pic,
+    .our_goal .content .our_goal_content .our_goal_intro .our_goal_mask {
+        width: 300px;
+        height: 331px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .icon {
+        left: 125px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .tixing {
+        width: 300px;
+        height: 250px;
+        left: 15px;
+        top: 140px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .content {
+        top: 194px;
+        width: 250px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .content h3 {
+        margin: 28px 0;
+    }
+}
+
+/*高度在600px-800px，用宽度1200px以下的尺寸*/
+@media (min-height: 600px) and (max-height: 800px) {
+    .our_goal .content .our_goal_content .our_goal_intro {
+        width: 220px;
+        height: 400px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .bot_pic,
+    .our_goal .content .our_goal_content .our_goal_intro .our_goal_mask {
+        width: 220px;
+        height: 230px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .icon {
+        left: 85px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .tixing {
+        width: 220px;
+        height: 230px;
+        left: 14px;
+        top: 113px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .content {
+        top: 177px;
+        width: 174px;
+    }
+
+    .our_goal .content .our_goal_content .our_goal_intro .content h3 {
+        margin: 16px 0;
+    }
+}
+
+/*
+关于我们
+*/
+.about_us .cooperation {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.about_us .cooperation .title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+}
+
+.about_us .cooperation .about_us_pic {
+    overflow: hidden;
+    text-align: center;
+}
+
+.about_us .cooperation .about_us_pic div img {
+    width: 100%;
+    max-width: 220px;
+    margin: 10px;
+}
+
+.about_us .footer {
+    padding: 20px 0;
+    color: #727272;
+    width: 100%;
+    background-color: #141414;
+}
+
+.about_us .footer .container {
+    height: 100%;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    -o-flex-direction: column;
+    flex-direction: column;
+    font-size: 1.6rem;
+}
+
+.about_us .footer .container .footer_content > div {
+    padding-left: 0;
+}
+
+.about_us .footer .container .footer_content {
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.about_us .footer .container .footer_content li {
+    height: 60px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.about_us .footer .container .footer_content img {
+    margin: 15px;
+    margin-left: 0;
+}
+
+.about_us .footer .container .footer_content img:last-child {
+    margin: 0;
+    max-width: 160px;
+    width: 100%;
+}
+
+.about_us .footer .container .footer_content .detail {
+    display: inline-block;
+    font-size: 1.4rem;
+}
+
+.about_us .footer .container .footer_content .detail a {
+    text-decoration: none;
+    color: #727272;
+}
+
+.about_us .footer .container .footer_content .col-md-3 ul li {
+    height: 45px;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+}
+
+.about_us .footer_bar {
+    width: 100%;
+    background-color: #000;
+    height: 50px;
+    color: #302F2F;
+    text-align: center;
+    font-size: 1.6rem;
+    display: -webkit-box;
+    /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;
+    /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;
+    /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    /* NEW - Chrome */
+    display: flex;
+    /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+
+/*宽度992px以上且高度600px以上*/
+@media (min-width: 992px) and (min-height: 600px) {
+    .about_us {
+        height: 100%;
+        position: relative;
+    }
+
+    .about_us .cooperation {
+        position: absolute;
+        top: 60px;
+        bottom: 55%;
+    }
+
+    .about_us .footer {
+        position: absolute;
+        top: 45%;
+        bottom: 50px;
+    }
+
+    .about_us .footer_bar {
+        position: absolute;
+        bottom: 0;
+    }
+}
